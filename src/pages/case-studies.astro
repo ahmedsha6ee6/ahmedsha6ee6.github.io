@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Case Studies | QuantumFrame Studio" 
+    description="Explore our portfolio of web development and SEO projects across Madhya Pradesh."
+    pageId="casestudies"
+>
+	<main id="qfs-casestudies-main" class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-40 pb-32 relative" style="background:var(--background);">
+        
+        <div id="qfs-casestudies-content" class="relative z-10 max-w-7xl mx-auto w-full">
+            <p class="text-xs font-bold uppercase tracking-widest mb-4 qfs-reveal" style="color:var(--primary);">Our Portfolio</p>
+            <h1 id="qfs-casestudies-heading" class="text-5xl md:text-7xl font-black tracking-tighter mb-16 leading-[0.9] qfs-reveal qfs-reveal-delay-1" style="color:var(--foreground);">
+                <span class="qfs-scramble inline-block whitespace-nowrap">CASE</span> <br>
+                <span style="color:var(--primary);" class="qfs-scramble inline-block whitespace-nowrap">STUDIES.</span>
+            </h1>
+            
+            <div id="qfs-casestudies-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 qfs-reveal qfs-reveal-delay-2">
+                
+                <div class="border p-10 rounded-3xl qfs-hoverable group transition-all hover:shadow-xl" style="background:var(--card);border-color:var(--border);">
+                    <p class="uppercase tracking-widest text-xs font-bold mb-4" style="color:var(--primary);">React Development</p>
+                    <h3 class="text-3xl font-black mb-4 tracking-tight" style="color:var(--foreground);">Indore Tech Enterprise</h3>
+                    <p class="leading-relaxed mb-10" style="color:var(--muted-foreground);">A complete custom website development overhaul using React, resulting in a 425% conversion increase.</p>
+                    <a href="#" class="inline-block text-sm font-bold tracking-wide uppercase border-b pb-1 transition-all group-hover:pl-2" style="color:var(--foreground);border-color:var(--primary);">Read Case Study &rarr;</a>
+                </div>
+
+                <div class="border p-10 rounded-3xl qfs-hoverable group transition-all hover:shadow-xl" style="background:var(--card);border-color:var(--border);">
+                    <p class="uppercase tracking-widest text-xs font-bold mb-4" style="color:var(--primary);">Local SEO & Content Marketing</p>
+                    <h3 class="text-3xl font-black mb-4 tracking-tight" style="color:var(--foreground);">Bhopal Architecture Firm</h3>
+                    <p class="leading-relaxed mb-10" style="color:var(--muted-foreground);">Strategic digital marketing campaign that dominated local search rankings across Madhya Pradesh.</p>
+                    <a href="#" class="inline-block text-sm font-bold tracking-wide uppercase border-b pb-1 transition-all group-hover:pl-2" style="color:var(--foreground);border-color:var(--primary);">Read Case Study &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</Layout>

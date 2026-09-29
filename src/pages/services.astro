@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Services | QuantumFrame Studio" 
+    description="React development, custom website design, SEO experts, PPC advertising, AI Video Creation and more."
+    pageId="services"
+>
+	<section id="qfs-services-main" class="px-6 md:px-12 pt-40 pb-32 min-h-screen" style="background:var(--background);">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-xs font-bold uppercase tracking-widest mb-4 qfs-reveal" style="color:var(--primary);">What We Offer</p>
+            <h1 id="qfs-services-title" class="text-5xl md:text-7xl font-black tracking-tighter mb-6 qfs-reveal qfs-reveal-delay-1" style="color:var(--foreground);"><span class="qfs-scramble inline-block whitespace-nowrap">CAPABILITIES</span></h1>
+            <p class="text-lg mb-16 max-w-2xl qfs-reveal qfs-reveal-delay-2" style="color:var(--muted-foreground);">Explore our wide range of services designed to help your business succeed. Our team provides high-quality solutions tailored to your needs.</p>
+            
+            <div id="qfs-services-bento" class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[720px] qfs-reveal qfs-reveal-delay-2">
+                
+                <!-- Service 1: Large -->
+                <div id="qfs-services-item-1" class="md:col-span-2 md:row-span-2 border rounded-3xl p-8 flex flex-col justify-between group hover:shadow-xl qfs-hoverable transition-all" style="background:var(--card);border-color:var(--border);">
+                    <div class="w-12 h-12 rounded-full border flex items-center justify-center mb-12 font-mono font-bold transition-all group-hover:scale-110" style="border-color:var(--primary);color:var(--primary);">
+                        01
+                    </div>
+                    <div>
+                        <span class="text-3xl mb-3 block">🎨</span>
+                        <h3 class="text-2xl font-black mb-4 tracking-tight" style="color:var(--foreground);">Custom Web Development</h3>
+                        <p class="leading-relaxed" style="color:var(--muted-foreground);">As the top web development company in Bhopal, we offer custom website design, WordPress development, React development, e-commerce solutions, and mobile-responsive web development.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div id="qfs-services-item-2" class="md:col-span-2 border rounded-3xl p-8 flex flex-col justify-between group hover:shadow-xl qfs-hoverable transition-all" style="background:var(--accent);border-color:var(--border);">
+                    <div class="w-10 h-10 rounded-full border flex items-center justify-center text-sm font-mono font-bold mb-8 transition-all group-hover:scale-110" style="border-color:var(--primary);color:var(--primary);">
+                        02
+                    </div>
+                    <div>
+                        <span class="text-2xl mb-3 block">🚀</span>
+                        <h3 class="text-xl font-black mb-2 tracking-tight" style="color:var(--foreground);">SEO & Digital Marketing</h3>
+                        <p class="text-sm leading-relaxed" style="color:var(--muted-foreground);">Professional SEO services, social media marketing, content marketing, PPC advertising, and online reputation management.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div id="qfs-services-item-3" class="border rounded-3xl p-8 flex flex-col justify-between group hover:shadow-xl qfs-hoverable transition-all" style="background:var(--card);border-color:var(--border);">
+                    <div class="w-10 h-10 rounded-full border flex items-center justify-center text-sm font-mono font-bold mb-8 transition-all group-hover:scale-110" style="border-color:var(--primary);color:var(--primary);">
+                        03
+                    </div>
+                    <div>
+                        <span class="text-2xl mb-3 block">🎬</span>
+                        <h3 class="text-lg font-black mb-2 tracking-tight" style="color:var(--foreground);">AI Video & Content</h3>
+                        <p class="text-sm leading-relaxed" style="color:var(--muted-foreground);">Professional video production and AI-driven content creation strategies.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div id="qfs-services-item-4" class="border rounded-3xl p-8 flex flex-col justify-between group hover:shadow-xl qfs-hoverable transition-all" style="background:var(--card);border-color:var(--border);">
+                    <div class="w-10 h-10 rounded-full border flex items-center justify-center text-sm font-mono font-bold mb-8 transition-all group-hover:scale-110" style="border-color:var(--primary);color:var(--primary);">
+                        04
+                    </div>
+                    <div>
+                        <span class="text-2xl mb-3 block">📱</span>
+                        <h3 class="text-lg font-black mb-2 tracking-tight" style="color:var(--foreground);">UI/UX & Mobile Apps</h3>
+                        <p class="text-sm leading-relaxed" style="color:var(--muted-foreground);">Immersive mobile app development and UI/UX design services.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Extra Services Row -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 qfs-reveal qfs-reveal-delay-3">
+                <div id="qfs-services-item-5" class="border rounded-3xl p-8 flex items-start gap-6 group hover:shadow-xl qfs-hoverable transition-all" style="background:var(--card);border-color:var(--border);">
+                    <span class="text-3xl">📊</span>
+                    <div>
+                        <h3 class="text-xl font-black mb-2" style="color:var(--foreground);">Social Media & Facebook Marketing</h3>
+                        <p class="text-sm leading-relaxed" style="color:var(--muted-foreground);">Targeted social media management and Facebook Marketing campaigns designed to scale your e-commerce and retail conversions.</p>
+                    </div>
+                </div>
+                <div id="qfs-services-item-6" class="border rounded-3xl p-8 flex items-start gap-6 group hover:shadow-xl qfs-hoverable transition-all" style="background:var(--accent);border-color:var(--border);">
+                    <span class="text-3xl">✍️</span>
+                    <div>
+                        <h3 class="text-xl font-black mb-2" style="color:var(--foreground);">Content Creation & Strategy</h3>
+                        <p class="text-sm leading-relaxed" style="color:var(--muted-foreground);">Strategic content creation that grows your audience, builds brand trust, and drives organic traffic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

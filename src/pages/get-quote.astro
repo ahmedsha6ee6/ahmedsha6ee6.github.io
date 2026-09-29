@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Get A Quote | QuantumFrame Studio" 
+    description="Get a personalized quotation for web development, SEO, social media, and digital marketing services."
+    pageId="get-quote"
+>
+	<main id="qfs-quote-main" class="min-h-screen px-6 md:px-12 pt-40 pb-32" style="background:var(--background);">
+        
+        <div class="relative z-10 max-w-4xl mx-auto w-full">
+            
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold uppercase tracking-widest mb-4 qfs-reveal" style="color:var(--primary);">Free Estimation</p>
+                <h1 id="qfs-quote-heading" class="text-5xl md:text-7xl font-black tracking-tighter mb-6 leading-[0.9] uppercase qfs-reveal qfs-reveal-delay-1" style="color:var(--foreground);">
+                    <span class="qfs-scramble inline-block whitespace-nowrap">Get</span> 
+                    <span class="qfs-scramble inline-block whitespace-nowrap">a</span> 
+                    <span style="color:var(--primary);" class="qfs-scramble inline-block whitespace-nowrap">Quote.</span>
+                </h1>
+                <p class="text-xl font-medium leading-relaxed max-w-2xl mx-auto qfs-reveal qfs-reveal-delay-2" style="color:var(--muted-foreground);">
+                    Fill out this form with your project details, and we'll send you a personalized quotation via WhatsApp.
+                </p>
+            </div>
+
+            <div id="qfs-quote-form-wrapper" class="border rounded-3xl p-8 md:p-16 transition-all hover:shadow-xl qfs-reveal-scale" style="background:var(--card);border-color:var(--border);">
+                
+                <form id="qfs-quote-form" class="space-y-10 flex flex-col">
+                    
+                    <!-- Basic Information -->
+                    <div>
+                        <h3 class="text-lg font-black tracking-widest uppercase mb-6 pb-2 border-b" style="color:var(--foreground);border-color:var(--border);">Basic Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label for="quote-name" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Full Name *</label>
+                                <input type="text" id="quote-name" required class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="quote-company" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Company/Organization</label>
+                                <input type="text" id="quote-company" class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="quote-email" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Email Address *</label>
+                                <input type="email" id="quote-email" required class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="quote-phone" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Phone Number *</label>
+                                <input type="tel" id="quote-phone" required class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Required -->
+                    <div>
+                        <h3 class="text-lg font-black tracking-widest uppercase mb-6 pb-2 border-b" style="color:var(--foreground);border-color:var(--border);">Services Required *</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            {['🎨 Website Design','🚀 SEO Optimization','📱 Social Media Management','🎬 Video Production','📊 Facebook Marketing','✍️ Content Creation'].map(s => (
+                                <label class="flex items-center gap-3 p-4 border  cursor-pointer text-sm font-semibold transition-all hover:border-primary rounded-xl" style={`background:var(--input);border-color:var(--border);color:var(--foreground);`}>
+                                    <input type="checkbox" class="accent-primary w-4 h-4 rounded-xl" value={s}>
+                                    {s}
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div>
+                        <h3 class="text-lg font-black tracking-widest uppercase mb-6 pb-2 border-b" style="color:var(--foreground);border-color:var(--border);">Project Details</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label for="quote-budget" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Budget Range (INR)</label>
+                                <select id="quote-budget" class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all appearance-none rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);">
+                                    <option value="">Select budget range</option>
+                                    <option value="10k-25k">₹10,000 - ₹25,000</option>
+                                    <option value="25k-50k">₹25,000 - ₹50,000</option>
+                                    <option value="50k-1L">₹50,000 - ₹1,00,000</option>
+                                    <option value="1L+">₹1,00,000+</option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="quote-timeline" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Project Timeline</label>
+                                <select id="quote-timeline" class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all appearance-none rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);">
+                                    <option value="">Select timeline</option>
+                                    <option value="1-2w">1-2 weeks</option>
+                                    <option value="2-4w">2-4 weeks</option>
+                                    <option value="1-2m">1-2 months</option>
+                                    <option value="3m+">3+ months</option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col gap-2 md:col-span-2">
+                                <label for="quote-description" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Project Description *</label>
+                                <textarea id="quote-description" required rows="6" class="px-4 py-3 text-sm  border focus:outline-none transition-all resize-none rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);" placeholder="Tell us about your project, goals, and requirements..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="qfs-shimmer font-bold tracking-widest uppercase text-sm px-12 py-5 w-full flex items-center justify-center gap-3 transition-all rounded-full" style="background:var(--primary);color:var(--primary-foreground);">
+                        <span>💬</span> SEND MESSAGE ON WHATSAPP
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+</Layout>

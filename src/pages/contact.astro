@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Contact Us | QuantumFrame Studio" 
+    description="Contact QuantumFrame Studio in Bhopal. Email, call, or WhatsApp us to start your project."
+    pageId="contact"
+>
+	<main id="qfs-contact-main" class="min-h-screen px-6 md:px-12 pt-40 pb-16" style="background:var(--background);">
+        
+        <div id="qfs-contact-content" class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Left: Contact Info -->
+            <div id="qfs-contact-text">
+                <p class="text-xs font-bold uppercase tracking-widest mb-4 qfs-reveal" style="color:var(--primary);">Get in Touch</p>
+                <h1 id="qfs-contact-heading" class="text-5xl lg:text-6xl font-black tracking-tighter mb-8 leading-[0.9] qfs-reveal qfs-reveal-delay-1" style="color:var(--foreground);">
+                    <span class="qfs-scramble inline-block whitespace-nowrap">LET'S</span> 
+                    <span class="qfs-scramble inline-block whitespace-nowrap">CREATE</span> <br>
+                    <span style="color:var(--primary);">
+                        <span class="qfs-scramble inline-block whitespace-nowrap">SOMETHING</span> 
+                        <span class="qfs-scramble inline-block whitespace-nowrap">AMAZING.</span>
+                    </span>
+                </h1>
+                <p class="text-xl font-medium leading-relaxed max-w-lg mb-16 qfs-reveal qfs-reveal-delay-2" style="color:var(--muted-foreground);">
+                    Ready to transform your digital presence? We're here to help bring your vision to life with our expertise in web development and digital marketing.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 qfs-reveal qfs-reveal-delay-3">
+                    
+                    <div class="p-6 border rounded-3xl qfs-hoverable group transition-all hover:shadow-lg" style="background:var(--card);border-color:var(--border);">
+                        <span class="text-2xl mb-4 block">📧</span>
+                        <h4 class="text-xs uppercase tracking-widest font-bold mb-2" style="color:var(--muted-foreground);">Email Us</h4>
+                        <a href="mailto:info@quantumframestudio.com" class="font-bold text-sm hover:underline break-words" style="color:var(--foreground);">info@quantumframestudio.com</a>
+                    </div>
+                    
+                    <div class="p-6 border rounded-3xl qfs-hoverable group transition-all hover:shadow-lg" style="background:var(--card);border-color:var(--border);">
+                        <span class="text-2xl mb-4 block">📱</span>
+                        <h4 class="text-xs uppercase tracking-widest font-bold mb-2" style="color:var(--muted-foreground);">Call Us</h4>
+                        <a href="tel:+919243015433" class="font-bold hover:underline" style="color:var(--foreground);">+91 9243015433</a>
+                    </div>
+                    
+                    <div class="p-6 border rounded-3xl qfs-hoverable group transition-all hover:shadow-lg" style="background:var(--accent);border-color:var(--border);">
+                        <span class="text-2xl mb-4 block">💬</span>
+                        <h4 class="text-xs uppercase tracking-widest font-bold mb-2" style="color:var(--muted-foreground);">WhatsApp</h4>
+                        <a href="https://wa.me/919243015433" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline" style="color:var(--primary);">+91 9243015433</a>
+                    </div>
+
+                    <div class="p-6 border rounded-3xl qfs-hoverable group transition-all hover:shadow-lg" style="background:var(--card);border-color:var(--border);">
+                        <span class="text-2xl mb-4 block">📍</span>
+                        <h4 class="text-xs uppercase tracking-widest font-bold mb-2" style="color:var(--muted-foreground);">Visit Us</h4>
+                        <p class="font-bold text-sm" style="color:var(--foreground);">Bhopal, Madhya Pradesh</p>
+                        <p class="text-xs mt-1" style="color:var(--muted-foreground);">Serving across MP & India</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div id="qfs-contact-form-wrapper" class="border rounded-3xl p-8 md:p-12 transition-all hover:shadow-xl qfs-reveal-scale" style="background:var(--card);border-color:var(--border);">
+                <h3 class="text-2xl font-black tracking-tight mb-2 uppercase" style="color:var(--foreground);">Start Your Project</h3>
+                <p class="text-sm mb-8" style="color:var(--muted-foreground);">Fill out this form, and we'll send you a personalized quotation.</p>
+
+                <form id="qfs-contact-form" class="space-y-6 flex flex-col">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label for="name" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Full Name *</label>
+                            <input type="text" id="name" required class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);--tw-ring-color:var(--ring);" placeholder="John Doe">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="company" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Company</label>
+                            <input type="text" id="company" class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);" placeholder="Acme Corp">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label for="email" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Email *</label>
+                            <input type="email" id="email" required class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);" placeholder="john@example.com">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="phone" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Phone *</label>
+                            <input type="tel" id="phone" required class="px-4 py-3 text-sm  border focus:outline-none focus:ring-2 transition-all rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);" placeholder="+91 00000 00000">
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <label class="text-xs uppercase tracking-widest font-bold block mb-3" style="color:var(--muted-foreground);">Services Required *</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            {['🎨 Website Design','🚀 SEO Optimization','📱 Social Media','🎬 Video Production'].map(s => (
+                                <label class="flex items-center gap-2 p-3 border  cursor-pointer text-sm font-medium transition-all hover:border-primary rounded-xl" style={`background:var(--input);border-color:var(--border);color:var(--foreground);`}>
+                                    <input type="checkbox" class="accent-primary w-4 h-4 rounded-xl" value={s.replace(/[^\w ]/g,'').trim()}>
+                                    {s}
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="description" class="text-xs uppercase tracking-widest font-bold" style="color:var(--muted-foreground);">Project Description *</label>
+                        <textarea id="description" required rows="4" class="px-4 py-3 text-sm  border focus:outline-none transition-all resize-none rounded-xl" style="background:var(--input);border-color:var(--border);color:var(--foreground);" placeholder="Tell us about your goals..."></textarea>
+                    </div>
+
+                    <button type="submit" class="qfs-shimmer mt-4 font-bold tracking-widest uppercase text-sm px-8 py-5 w-full flex items-center justify-center gap-3 transition-all rounded-full" style="background:var(--primary);color:var(--primary-foreground);">
+                        <span>💬</span> SEND MESSAGE ON WHATSAPP
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- FAQ Section -->
+    <section class="py-32 px-6 md:px-12" style="background:var(--card);">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black tracking-tighter mb-16 uppercase text-center qfs-reveal" style="color:var(--foreground);">Frequently Asked <span style="color:var(--primary);">Questions.</span></h2>
+            <div class="space-y-4">
+                {[
+                    { q: 'How long does it take to build a website?', a: 'Typically 2-6 weeks depending on complexity and requirements. We\'ll provide a detailed timeline after understanding your needs.' },
+                    { q: 'Do you provide ongoing support?', a: 'Yes! We offer maintenance packages and ongoing support to keep your website running smoothly and up-to-date.' },
+                    { q: 'What\'s included in your SEO services?', a: 'Our SEO services include keyword research, on-page optimization, content strategy, technical SEO, and monthly performance reports.' },
+                    { q: 'Can you work with my existing brand?', a: 'Absolutely! We work with your existing brand guidelines or help you develop a new brand identity that resonates with your audience.' },
+                ].map((faq, i) => (
+                    <div class="p-8 border rounded-3xl qfs-reveal transition-all hover:shadow-md" style={`background:var(--background);border-color:var(--border);transition-delay:${i * 0.1}s;`}>
+                        <h4 class="font-black text-lg mb-3" style="color:var(--foreground);">{faq.q}</h4>
+                        <p class="leading-relaxed" style="color:var(--muted-foreground);">{faq.a}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+</Layout>
