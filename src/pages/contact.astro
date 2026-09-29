@@ -130,3 +130,24 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
 </Layout>
+
+<script is:inline>
+    document.getElementById('qfs-contact-form')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const company = document.getElementById('company').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const desc = document.getElementById('description').value;
+        
+        const services = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                            .map(cb => cb.value)
+                            .join(', ');
+
+        const text = `Hi QuantumFrame Studio! I have an inquiry.%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Services:* ${services || 'None selected'}%0A*Message:* ${desc}`;
+        
+        const whatsappNumber = '919243015433';
+        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+    });
+</script>

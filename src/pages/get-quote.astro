@@ -103,3 +103,24 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </main>
 </Layout>
+
+<script is:inline>
+    document.getElementById('qfs-quote-form')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('quote-name').value;
+        const company = document.getElementById('quote-company').value;
+        const phone = document.getElementById('quote-phone').value;
+        const budget = document.getElementById('quote-budget').value;
+        const details = document.getElementById('quote-details').value;
+        
+        const services = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                            .map(cb => cb.value)
+                            .join(', ');
+
+        const text = `Hi QuantumFrame Studio! I'd like a quote for a project.%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Phone:* ${phone}%0A*Budget:* ${budget}%0A*Services:* ${services || 'None selected'}%0A*Details:* ${details}`;
+        
+        const whatsappNumber = '919243015433'; // Using the phone number from the contact page
+        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+    });
+</script>

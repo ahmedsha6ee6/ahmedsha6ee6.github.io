@@ -91,9 +91,28 @@ const { title, description, pageId } = Astro.props;
                         <span id="qfs-theme-label" class="hidden md:inline">Light</span>
                     </button>
 
-                    <a href="/get-quote" class="qfs-shimmer text-sm font-bold tracking-wide uppercase px-5 py-2  transition-all rounded-full" style="background:var(--primary);color:var(--primary-foreground);">Get a Quote</a>
+                    <a href="/get-quote" class="qfs-shimmer text-sm font-bold tracking-wide uppercase px-5 py-2 transition-all rounded-full hidden sm:block" style="background:var(--primary);color:var(--primary-foreground);">Get a Quote</a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="qfs-mobile-menu-btn" aria-label="Open mobile menu" class="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8">
+                        <span class="w-6 h-0.5 bg-current transition-transform duration-300"></span>
+                        <span class="w-6 h-0.5 bg-current transition-transform duration-300"></span>
+                        <span class="w-6 h-0.5 bg-current transition-transform duration-300"></span>
+                    </button>
                 </div>
             </nav>
+
+            <!-- Mobile Menu Drawer -->
+            <div id="qfs-mobile-drawer" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col pt-32 px-8 pb-8" style="background:var(--background);">
+                <div class="flex flex-col gap-6 text-2xl font-black uppercase tracking-widest mt-8">
+                    <a href="/"             class="mobile-link hover:opacity-70" style="color:var(--foreground);">Home</a>
+                    <a href="/about"        class="mobile-link hover:opacity-70" style="color:var(--foreground);">About Us</a>
+                    <a href="/services"     class="mobile-link hover:opacity-70" style="color:var(--foreground);">Services</a>
+                    <a href="/case-studies" class="mobile-link hover:opacity-70" style="color:var(--foreground);">Case Studies</a>
+                    <a href="/contact"      class="mobile-link hover:opacity-70" style="color:var(--foreground);">Contact</a>
+                    <a href="/get-quote"    class="mobile-link hover:opacity-70" style="color:var(--primary);">Get a Quote</a>
+                </div>
+            </div>
 
 		    <slot />
 
@@ -233,6 +252,34 @@ const { title, description, pageId } = Astro.props;
                         nav.classList.add('py-3');
                     }
                 }, { passive: true });
+
+                /* ── Mobile Menu Logic ─────────────────────────────────── */
+                const mobileBtn = document.getElementById('qfs-mobile-menu-btn');
+                const mobileDrawer = document.getElementById('qfs-mobile-drawer');
+                let menuOpen = false;
+
+                mobileBtn?.addEventListener('click', () => {
+                    menuOpen = !menuOpen;
+                    if (menuOpen) {
+                        mobileDrawer.classList.remove('translate-x-full');
+                        mobileDrawer.classList.add('translate-x-0');
+                        // Animate hamburger to X
+                        const spans = mobileBtn.querySelectorAll('span');
+                        spans[0].style.transform = 'translateY(8px) rotate(45deg)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+                        document.body.style.overflow = 'hidden'; // prevent scrolling
+                    } else {
+                        mobileDrawer.classList.add('translate-x-full');
+                        mobileDrawer.classList.remove('translate-x-0');
+                        // Reset hamburger
+                        const spans = mobileBtn.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
 
                 /* ── Page-exit transition (opacity on wrapper only) ─────── */
                 const wrapper = document.getElementById('qfs-page-wrapper');
