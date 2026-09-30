@@ -411,12 +411,23 @@ const { title, description, pageId } = Astro.props;
                     }
                 }
                 setTimeout(() => {
-                    // Pre-lock the exact pixel height of all headings to completely eliminate jitter
+                    // Pre-lock the exact pixel height and width to completely eliminate layout shifting
                     document.querySelectorAll('.qfs-scramble').forEach(el => {
                         const heading = el.closest('h1, h2, h3, h4, h5, h6');
+                        
+                        // Lock heading height
                         if (heading && !heading.style.minHeight) {
-                            heading.style.minHeight = heading.offsetHeight + 'px';
-                            heading.style.maxHeight = heading.offsetHeight + 'px';
+                            const hRect = heading.getBoundingClientRect();
+                            heading.style.minHeight = hRect.height + 'px';
+                            heading.style.maxHeight = hRect.height + 'px';
+                        }
+
+                        // Lock exact width of the text word so the scramble animation doesn't push other words
+                        if (!el.style.width) {
+                            const rect = el.getBoundingClientRect();
+                            el.style.width = rect.width + 'px';
+                            // Center the scrambling text inside its fixed boundary
+                            el.style.textAlign = 'left';
                         }
                     });
 
@@ -424,7 +435,17 @@ const { title, description, pageId } = Astro.props;
                         const fx = new ScrambleText(el);
                         const text = el.innerText;
                         el.innerText = '';
-                        fx.setText(text);
+                        
+                        const heading = el.closest('h1, h2, h3, h4, h5, h6');
+                        
+                        fx.setText(text).then(() => {
+                            // Release locks once animation finishes so the site remains fully responsive
+                            el.style.width = '';
+                            if (heading) {
+                                heading.style.minHeight = '';
+                                heading.style.maxHeight = '';
+                            }
+                        });
                     });
                 }, 400);
             });
