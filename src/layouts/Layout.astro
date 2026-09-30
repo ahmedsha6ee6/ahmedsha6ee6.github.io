@@ -359,7 +359,7 @@ const { title, description, pageId } = Astro.props;
                 class ScrambleText {
                     constructor(el) {
                         this.el = el;
-                        // Using only standard-height uppercase and numbers to completely prevent vertical line-height jitter
+                        // Using standard-height uppercase and numbers for vertical stability
                         this.chars = 'ABCDEF0123456789@#%&?!*+=';
                         this.original = el.innerText;
                         this.update = this.update.bind(this);
@@ -371,9 +371,9 @@ const { title, description, pageId } = Astro.props;
                         for (let i = 0; i < length; i++) {
                             const from = this.original[i] || '';
                             const to = newText[i] || '';
-                            // Slower animation: increased start and end frame bounds
-                            const start = Math.floor(Math.random() * 80);
-                            const end = start + Math.floor(Math.random() * 80);
+                            // Harmonized speed: more consistent duration across all headlines
+                            const start = Math.floor(Math.random() * 20);
+                            const end = start + Math.floor(Math.random() * 40) + 30;
                             this.queue.push({ from, to, start, end });
                         }
                         cancelAnimationFrame(this.frameRequest);
@@ -390,12 +390,13 @@ const { title, description, pageId } = Astro.props;
                                 complete++;
                                 output += to;
                             } else if (this.frame >= start) {
-                                // Slower character cycling: reduced probability from 0.28 to 0.12
-                                if (!char || Math.random() < 0.12) {
+                                // Crisp character cycling speed
+                                if (!char || Math.random() < 0.15) {
                                     char = this.chars[Math.floor(Math.random() * this.chars.length)];
                                     this.queue[i].char = char;
                                 }
-                                output += `<span style="opacity: 0.3;">${char}</span>`;
+                                // Colored with primary theme and a slight glow for the hacking effect
+                                output += `<span style="color: var(--primary); opacity: 0.9; text-shadow: 0 0 10px var(--primary);">${char}</span>`;
                             } else {
                                 output += from;
                             }
